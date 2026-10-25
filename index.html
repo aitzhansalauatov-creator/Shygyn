@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#4f46e5">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" href="icon-192.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Шығындар">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Менің шығындарым</title>
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+--bg:#f3f4f8;--card:#fff;--tx:#1b1f24;--mu:#6b7280;--bd:#e5e7eb;--in:#16a34a;--ex:#dc2626;--ac:#4f46e5;--ac2:#7c3aed}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--bg:#0f1115;--card:#1a1d24;--tx:#eceff3;--mu:#98a2b3;--bd:#2a303a;--in:#4ade80;--ex:#f87171;--ac:#818cf8;--ac2:#a78bfa}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.4}
+.w{max-width:640px;margin:0 auto;padding:16px}
+.tabs{display:grid;grid-template-columns:1fr 1fr;gap:6px;background:var(--card);border:1px solid var(--bd);padding:5px;border-radius:14px;margin-bottom:14px}
+.tab{background:none;border:0;color:var(--mu);padding:11px 6px;border-radius:10px;font:inherit;font-weight:600;cursor:pointer}
+.tab.on{background:linear-gradient(135deg,var(--ac),var(--ac2));color:#fff;box-shadow:0 4px 12px rgba(79,70,229,.3)}
+.hero{background:linear-gradient(135deg,#4f46e5,#7c3aed);color:#fff;border-radius:18px;padding:18px;margin-bottom:12px;box-shadow:0 8px 24px rgba(79,70,229,.25)}
+.hero small{opacity:.8;font-size:13px}
+.hero .big{font-size:32px;font-weight:700;margin:2px 0 14px;word-break:break-word}
+.hero .two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.hero .two div{background:rgba(255,255,255,.15);border-radius:12px;padding:10px}
+.hero .two b{display:block;font-size:17px;margin-top:2px;word-break:break-word}
+.c{background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:14px;margin-bottom:12px}
+h2{font-size:16px;margin:0 0 10px}
+form{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px}
+form .f{grid-column:1/-1}
+input,select,textarea,button{font:inherit;padding:11px;border-radius:10px;border:1px solid var(--bd);background:var(--bg);color:var(--tx);width:100%;min-width:0}
+textarea{resize:vertical;min-height:64px}
+button.s{border:0;color:#fff;font-weight:600;cursor:pointer}
+.g{background:var(--in)}.r{background:var(--ex)}
+.in{color:var(--in)}.ex{color:var(--ex)}
+.row{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;padding:10px 0;border-top:1px solid var(--bd)}
+.row:first-of-type{border-top:0}
+.row>div:first-child{min-width:0}
+.row small{color:var(--mu);display:block;word-break:break-word}
+.row .nt{color:var(--tx);opacity:.8;font-size:13px;margin-top:2px}
+.rt{display:flex;align-items:center;gap:2px;white-space:nowrap}
+.x{width:auto;background:none;border:0;color:var(--mu);padding:2px 8px;font-size:20px;cursor:pointer}
+.bar{height:7px;background:var(--bd);border-radius:4px;margin-top:4px;overflow:hidden}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--ac),var(--ac2))}
+.ih{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.ih h2{margin:0;white-space:nowrap}
+.src{width:55%;text-align:right;text-align-last:right;padding:8px 10px;font-size:14px}
+input[type=date]{-webkit-appearance:none;appearance:none;min-height:46px}
+.big{font-size:24px;font-weight:700;padding:12px 14px;min-height:58px}
+.e{color:var(--mu);font-size:14px;padding:6px 0}
+.mch{display:flex;gap:6px}
+.mcol{flex:1;text-align:center;min-width:0}
+.bars{height:130px;display:flex;align-items:flex-end;justify-content:center;gap:3px;border-bottom:1px solid var(--bd)}
+.bars i{display:block;width:40%;max-width:22px;border-radius:5px 5px 0 0}
+.bars .bi{background:var(--in)}.bars .be{background:var(--ex)}
+.mcol small{display:block;color:var(--mu);font-size:12px;margin-top:4px}
+.mcol b{display:block;font-size:10px;word-break:break-all}
+.leg{display:flex;gap:14px;font-size:12px;color:var(--mu);margin-top:10px}
+.leg span::before{content:'';display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:5px;background:var(--in)}
+.leg span+span::before{background:var(--ex)}
+</style>
+</head>
+<body>
+<div class="w">
+<div class="tabs">
+<button class="tab on" data-a="p">👤 Өз ақшам</button>
+<button class="tab" data-a="w">💼 Жұмыс ақшасы</button>
+</div>
+
+<select id="mf" style="margin-bottom:12px;font-weight:600"></select>
+<div class="hero">
+<small id="ttl">Өз ақшам · қалдық</small>
+<div class="big" id="sb">0</div>
+<div class="two">
+<div><small>Кіріс</small><b id="si">0</b></div>
+<div><small>Шығын</small><b id="se">0</b></div>
+</div>
+</div>
+
+<div class="c">
+<form id="fi">
+<div class="f ih"><h2>➕ Кіріс</h2><input class="src" type="text" name="n" placeholder="Қайдан түсті?"></div>
+<input type="date" name="d" required>
+<select name="m" id="tm"></select>
+<input class="f big" type="number" name="a" placeholder="Сома ₸" min="0" step="any" inputmode="decimal" required>
+<button class="s g f">Кіріс қосу</button>
+</form></div>
+
+<div class="c">
+<form id="fe">
+<div class="f ih"><h2>➖ Шығын</h2><select class="src" name="k" id="ks"></select></div>
+<input class="f" type="date" name="d" required>
+<input class="f big" type="number" name="a" placeholder="Сома ₸" min="0" step="any" inputmode="decimal" required>
+<textarea class="f" name="n" placeholder="Түсініктеме (не үшін жұмсалды?)"></textarea>
+<button class="s r f">Шығын қосу</button>
+</form></div>
+
+<div class="c"><h2>📈 Ай сайынғы диаграмма</h2><div class="mch" id="mc"></div><div class="leg"><span>Кіріс</span><span>Шығын</span></div></div>
+<div class="c"><h2>📊 Санаттар бойынша</h2><div id="cat"></div></div>
+<div class="c"><h2>Кірістер тізімі</h2><div id="li"></div></div>
+<div class="c"><h2>Шығындар тізімі</h2><div id="le"></div></div>
+<div class="c"><h2>💾 Сақтық көшірме</h2>
+<textarea id="bk" placeholder="Көшірілген деректер осында шығады. Басқа жерден көшіру үшін осы жерге қойып, «Жүктеу» басыңыз."></textarea>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px">
+<button type="button" class="s" style="background:var(--ac)" id="bx">Көшіру</button>
+<button type="button" class="s g" id="bi">Жүктеу</button></div>
+<div class="e" id="bm"></div></div>
+</div>
+
+<script>
+var CATS={p:['Аренда','Тариф','Такси','Басқа'],w:['1*1 Капитан','1*1 Солдат','Vizit','Taxi','Басқа']};
+var NAME={p:'Өз ақшам',w:'Жұмыс ақшасы'};
+var MF='all',MN=['Қаңтар','Ақпан','Наурыз','Сәуір','Мамыр','Маусым','Шілде','Тамыз','Қыркүйек','Қазан','Қараша','Желтоқсан'];
+var K='shygyn-v2',S={p:{inc:[],exp:[]},w:{inc:[],exp:[]}},A='p';
+try{var r=localStorage.getItem(K);
+ if(r)S=JSON.parse(r);
+ else{var o=localStorage.getItem('shygyn-v1');if(o)S.p=JSON.parse(o)}}catch(e){}
+function save(){try{localStorage.setItem(K,JSON.stringify(S))}catch(e){}}
+function fmt(n){return Math.round(n).toLocaleString('ru-RU')+' ₸'}
+function el(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e}
+function today(){var d=new Date();return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')}
+function sum(a){return a.reduce(function(s,o){return s+o.a},0)}
+document.querySelectorAll('input[type=date]').forEach(function(i){i.value=today()});
+
+function list(box,arr,key,cls){
+  box.innerHTML='';
+  if(!arr.length){box.appendChild(el('div','e','Әзірге жазба жоқ'));return}
+  arr.slice().sort(function(a,b){return b.d<a.d?-1:b.d>a.d?1:b.id-a.id}).forEach(function(o){
+    var row=el('div','row'),l=el('div');
+    l.appendChild(el('b','',o.k||(o.n?o.n:'Кіріс')));
+    l.appendChild(el('small','',o.d));
+    if(o.m)l.appendChild(el('small','nt','Есеп айы: '+mlabel(o.m)));
+    if(o.n&&o.k)l.appendChild(el('small','nt',o.n));
+    var rt=el('div','rt');
+    rt.appendChild(el('b',cls,(cls==='in'?'+':'−')+fmt(o.a)));
+    var x=el('button','x','×');x.type='button';x.title='Өшіру';
+    x.onclick=function(){S[A][key]=S[A][key].filter(function(z){return z.id!==o.id});save();render()};
+    rt.appendChild(x);row.appendChild(l);row.appendChild(rt);box.appendChild(row)});
+}
+function mlabel(k){return k.slice(0,4)+' · '+MN[parseInt(k.slice(5,7),10)-1]}
+function mk(o){return o.m||o.d.slice(0,7)}
+function fl(a){return MF==='all'?a:a.filter(function(o){return mk(o)===MF})}
+function mkey(x){return x.getFullYear()+'-'+String(x.getMonth()+1).padStart(2,'0')}
+function fillTarget(){
+  var t=document.getElementById('tm'),n=new Date(),i;t.innerHTML='';
+  for(i=-2;i<=12;i++){var x=new Date(n.getFullYear(),n.getMonth()+i,1),k=mkey(x),o=el('option','','Есеп айы: '+mlabel(k));o.value=k;t.appendChild(o)}
+  t.value=mkey(new Date(n.getFullYear(),n.getMonth()+1,1));
+}
+function fillMonths(){
+  var sel=document.getElementById('mf'),ks={},n=new Date();
+  ks[n.getFullYear()+'-'+String(n.getMonth()+1).padStart(2,'0')]=1;
+  S[A].inc.concat(S[A].exp).forEach(function(o){ks[mk(o)]=1});
+  var arr=Object.keys(ks).sort().reverse();
+  if(MF!=='all'&&!ks[MF])MF='all';
+  sel.innerHTML='';
+  var o0=el('option','','Барлық уақыт');o0.value='all';sel.appendChild(o0);
+  arr.forEach(function(k){var o=el('option','',mlabel(k));o.value=k;sel.appendChild(o)});
+  sel.value=MF;
+}
+function render(){
+  fillMonths();var all=S[A],d={inc:fl(all.inc),exp:fl(all.exp)},ti=sum(d.inc),te=sum(d.exp);
+  document.getElementById('ttl').textContent=NAME[A]+' · '+(MF==='all'?'барлық уақыт':mlabel(MF))+' · қалдық';
+  document.getElementById('sb').textContent=fmt(ti-te);
+  document.getElementById('si').textContent=fmt(ti);
+  document.getElementById('se').textContent=fmt(te);
+  var ks=document.getElementById('ks'),pv=ks.value;ks.innerHTML='';
+  CATS[A].forEach(function(k){var o=el('option','',k);ks.appendChild(o)});
+  if(CATS[A].indexOf(pv)>=0)ks.value=pv;
+  var cat=document.getElementById('cat');cat.innerHTML='';
+  CATS[A].forEach(function(k){
+    var t=sum(d.exp.filter(function(o){return o.k===k})),p=te?t/te*100:0,w=el('div');
+    w.style.marginBottom='10px';
+    var h=el('div');h.style.display='flex';h.style.justifyContent='space-between';
+    h.appendChild(el('span','',k));h.appendChild(el('b','',fmt(t)));
+    var br=el('div','bar'),i=el('i');i.style.width=p+'%';br.appendChild(i);
+    w.appendChild(h);w.appendChild(br);cat.appendChild(w)});
+  chart(all);
+  list(document.getElementById('li'),d.inc,'inc','in');
+  list(document.getElementById('le'),d.exp,'exp','ex');
+}
+function chart(d){
+  var box=document.getElementById('mc');box.innerHTML='';
+  var M=['Қаң','Ақп','Нау','Сәу','Мам','Мау','Шіл','Там','Қыр','Қаз','Қар','Жел'];
+  var now=new Date(),ms=[],i;
+  for(i=5;i>=0;i--){var x=new Date(now.getFullYear(),now.getMonth()-i,1);
+    ms.push({k:x.getFullYear()+'-'+String(x.getMonth()+1).padStart(2,'0'),l:M[x.getMonth()],i:0,e:0})}
+  d.inc.forEach(function(o){ms.forEach(function(m){if(mk(o)===m.k)m.i+=o.a})});
+  d.exp.forEach(function(o){ms.forEach(function(m){if(mk(o)===m.k)m.e+=o.a})});
+  var mx=Math.max.apply(null,ms.map(function(m){return Math.max(m.i,m.e)}).concat([1]));
+  function h(v){return v>0?Math.max(3,Math.round(v/mx*125)):0}
+  function sh(n){return n>=1e6?(n/1e6).toFixed(1)+'M':n>=1000?Math.round(n/1000)+'k':String(Math.round(n))}
+  ms.forEach(function(m){
+    var c=el('div','mcol'),b=el('div','bars'),a=el('i','bi'),e=el('i','be');
+    a.style.height=h(m.i)+'px';e.style.height=h(m.e)+'px';
+    b.appendChild(a);b.appendChild(e);c.appendChild(b);
+    c.appendChild(el('small','',m.l));
+    var f=function(v){return Math.round(v).toLocaleString('ru-RU')};
+    c.appendChild(el('b','in',m.i?f(m.i):'–'));c.appendChild(el('b','ex',m.e?f(m.e):'–'));box.appendChild(c)});
+}
+function add(fid,key){
+  document.getElementById(fid).addEventListener('submit',function(ev){
+    ev.preventDefault();var f=ev.target,a=parseFloat(f.a.value);
+    if(!(a>0))return;
+    var o={id:Date.now(),d:f.d.value,a:a,n:f.n.value.trim()};
+    if(f.k)o.k=f.k.value;if(f.m)o.m=f.m.value;
+    S[A][key].push(o);save();f.a.value='';f.n.value='';render()});
+}
+document.querySelectorAll('.tab').forEach(function(b){
+  b.onclick=function(){A=b.dataset.a;MF='all';
+    document.querySelectorAll('.tab').forEach(function(t){t.classList.toggle('on',t===b)});render()}});
+document.getElementById('bx').onclick=function(){
+  var t=JSON.stringify(S),a=document.getElementById('bk'),m=document.getElementById('bm');
+  a.value=t;a.select();m.textContent='Мәтінді өзіңіз көшіріп алыңыз';
+  try{navigator.clipboard.writeText(t).then(function(){m.textContent='Көшірілді ✔'},function(){})}catch(e){}};
+document.getElementById('bi').onclick=function(){
+  var m=document.getElementById('bm'),j;
+  try{j=JSON.parse(document.getElementById('bk').value)}catch(e){m.textContent='Қате: мәтін дұрыс емес';return}
+  if(!j||!j.p||!j.w){m.textContent='Қате: деректер табылмады';return}
+  var n=0;
+  ['p','w'].forEach(function(k){['inc','exp'].forEach(function(t){
+    (j[k][t]||[]).forEach(function(o){
+      if(!S[k][t].some(function(z){return z.id===o.id})){S[k][t].push(o);n++}})})});
+  save();render();m.textContent='Жүктелді ✔ ('+n+' жазба қосылды)'};
+fillTarget();
+document.getElementById('mf').onchange=function(){MF=this.value;render()};
+add('fi','inc');add('fe','exp');render();
+if('serviceWorker' in navigator&&location.protocol.indexOf('http')===0){navigator.serviceWorker.register('sw.js').catch(function(){})}
+</script>
+</body>
+</html>
